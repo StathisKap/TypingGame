@@ -1,3 +1,8 @@
+/* Made by StathisKap
+* Version 1.0
+* TypingSpeedGame - generates a sentence, you type it, and it times you.
+*Date Created: 2/10/2020 */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
