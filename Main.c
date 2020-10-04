@@ -38,10 +38,30 @@ int Measure_Typing_Speed(char Sentence[],int SentenceLength)
     scanf("%s",UserSentence);
     clock_t end = clock();
     time = (int)(end-begin)/CLOCKS_PER_SEC;
+    Find_Faults(Sentence,UserSentence,SentenceLength);
     printf("it took you, %d seconds",time);
     return time;
 }
-
+void Find_Faults(char Sentence[], char UserSentence[],int SentenceLength)
+{
+    char Faults[SentenceLength];
+    if(strcmp(Sentence, UserSentence)==0)
+        printf( "You did all of them right!!");
+    else
+    {
+        for(int i = 0 ; i<SentenceLength;i++)
+        {
+            if(Sentence[i]!=UserSentence[i]){
+                strcat(Faults,Sentence[i]);
+            }
+        }
+        printf("Your mistakes were:\n");
+        for(int i = 0 ; i<strlen(Faults);i++){
+            printf("%c, ",Faults[i]);
+        }
+    }
+    
+}
 void main()
 {
     int SentenceLength,SentenceAmount;
