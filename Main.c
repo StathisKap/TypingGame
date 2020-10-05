@@ -3,31 +3,7 @@
 #include <string.h>
 #include <time.h>
 
-char* GenerateSentence(int SentenceLength)
-{
-    srand(time(0));
-    //@ignore
-    char Sentence[SentenceLength];
-    char Alphabet[] = {"abcdefghijklmnopqrstuvwxyz"};
-    int total = 0,space = 0;
-    while(total<SentenceLength-2)
-    {
-        int WordLength = 2 + rand() %8;
-        char Word[11];
-        int i;
-        for(i =0;i<WordLength;i++)
-        {
-            int Letter = rand() %26;
-            Word[i]=Alphabet[Letter];
-            Word[WordLength]=NULL;
-        }
-        total += ++space + WordLength;
-        strcat(Sentence-1, Word);
-        strcat(Sentence, " ");
-        Sentence[SentenceLength]=NULL;
-    }
-    return Sentence;
-}
+
 int Measure_Typing_Speed(char Sentence[],int SentenceLength)
 {
     char UserSentence[SentenceLength];
@@ -56,8 +32,8 @@ void Find_Faults(char Sentence[], char UserSentence[],int SentenceLength)
             }
         }
         printf("Your mistakes were:\n");
-        for(int i = 0 ; i<strlen(Faults);i++){
-            printf("%c, ",Faults[i]);
+        for(int j = 0 ; j<strlen(Faults);j++){
+            printf("%c, ",Faults[j]);
         }
     }
     
@@ -69,7 +45,7 @@ void main()
     scanf("%d",&SentenceLength);
     char str[SentenceLength];
 
-	strcpy(str,GenerateSentence(SentenceLength));
+	strcpy(str,Generate_Sentence(SentenceLength));
     
     Measure_Typing_Speed(str,SentenceLength);
 }
