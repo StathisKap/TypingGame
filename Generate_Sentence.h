@@ -5,10 +5,9 @@
 
 
 
-char* Generate_Sentence(int SentenceLength)
+char* Generate_Sentence(int SentenceLength, float * Word_Count)
 {
     srand(time(0));
-    //@ignore
     char Sentence[SentenceLength];
     char Alphabet[] = {"abcdefghijklmnopqrstuvwxyz"};
     int total = 0,space = 0;
@@ -25,6 +24,7 @@ char* Generate_Sentence(int SentenceLength)
         }
         total += ++space + WordLength;
         strcat(Sentence-1, Word);
+        ++*Word_Count;
         strcat(Sentence, " ");
         Sentence[SentenceLength]=NULL;
     }

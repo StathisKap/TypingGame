@@ -7,7 +7,6 @@
 char* Generate_Sentence(int SentenceLength)
 {
     srand(time(0));
-    //@ignore
     char Sentence[SentenceLength];
     char Alphabet[] = {"abcdefghijklmnopqrstuvwxyz"};
     int total = 0,space = 0;
