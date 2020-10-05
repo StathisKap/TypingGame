@@ -4,27 +4,23 @@
 #include <time.h>
 
 
-char* Generate_Sentence(int SentenceLength)
+void Find_Faults(int SentenceLength,char String[] ,char User_Sentence[])
 {
-    srand(time(0));
-    char Sentence[SentenceLength];
-    char Alphabet[] = {"abcdefghijklmnopqrstuvwxyz"};
-    int total = 0,space = 0;
-    while(total<SentenceLength-2)
+    printf("\n");
+    puts(String);
+    
+    for(int i = 2; i<SentenceLength;i++)
     {
-        int WordLength = 2 + rand() %8;
-        char Word[11];
-        int i;
-        for(i =0;i<WordLength;i++)
+        if(String[i]==User_Sentence[i])
         {
-            int Letter = rand() %26;
-            Word[i]=Alphabet[Letter];
-            Word[WordLength]=NULL;
+            printf("%c",User_Sentence[i]);
         }
-        total += ++space + WordLength;
-        strcat(Sentence-1, Word);
-        strcat(Sentence, " ");
-        Sentence[SentenceLength]=NULL;
+        else 
+        {
+            printf("\033[1;31m");
+            printf("%c",User_Sentence[i]);
+            printf("\033[0m");
+        }
     }
-    return Sentence;
+    printf("\n");
 }

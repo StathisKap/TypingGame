@@ -6,6 +6,7 @@
 
 #include "Generate_Sentence.h"
 #include "Measure_Typing_Speed.h"
+#include "Find_Faults.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
