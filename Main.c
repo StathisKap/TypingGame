@@ -12,7 +12,7 @@
 #include <string.h>
 #include <time.h>
 
-void main()
+int main()
 {
     int SentenceLength,SentenceAmount;
     float Word_Count;
@@ -23,4 +23,5 @@ void main()
     char str[SentenceLength];
     strcpy(str,Generate_Sentence(SentenceLength,Word_Count_ptr));
     Measure_Typing_Speed(str,SentenceLength,Word_Count_ptr);
+    return 0;
 }
