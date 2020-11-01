@@ -15,10 +15,10 @@
 int main()
 {
     int SentenceLength;
-    char Length[4];
+    char *Length = malloc(4);
     float Word_Count;
     printf("How long do you want your sentences to be?\n");
-    fgets(Length,3,stdin);
+    fgets(Length,4,stdin);
     SentenceLength = atoi(Length);
     char *str = malloc(SentenceLength);
     strcpy(str,Generate_Sentence(SentenceLength,&Word_Count));
