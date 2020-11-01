@@ -14,14 +14,14 @@
 
 int main()
 {
-    int SentenceLength,SentenceAmount;
+    int SentenceLength;
+    char Length[4];
     float Word_Count;
-    float * Word_Count_ptr;
-    Word_Count_ptr =&Word_Count;
     printf("How long do you want your sentences to be?\n");
-    scanf("%d",&SentenceLength);
-    char str[SentenceLength];
-    strcpy(str,Generate_Sentence(SentenceLength,Word_Count_ptr));
-    Measure_Typing_Speed(str,SentenceLength,Word_Count_ptr);
+    fgets(Length,3,stdin);
+    SentenceLength = atoi(Length);
+    char *str = malloc(SentenceLength);
+    strcpy(str,Generate_Sentence(SentenceLength,&Word_Count));
+    Measure_Typing_Speed(str,SentenceLength,&Word_Count);
     return 0;
 }
