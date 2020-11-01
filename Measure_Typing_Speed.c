@@ -6,16 +6,17 @@
 #include "Find_Faults.h"
 
 
-int Measure_Typing_Speed(char * Sentence,int SentenceLength,float * Words_Count)
+int Measure_Typing_Speed(char Sentence[],int SentenceLength,float * Words_Count)
 {
     char *UserSentence = malloc(SentenceLength);
-    float time = 0;
+    int time = 0;
     printf("Start typing this Sentence as fast as you can:\n\n %s\n",Sentence);
+    getchar();
     clock_t begin = clock();
     fgets(UserSentence,SentenceLength,stdin);
     clock_t end = clock();
-    time = ((float)(end-begin))/10;
+    time = (int)((end-begin)/CLOCKS_PER_SEC);
     Find_Faults(SentenceLength,Sentence,UserSentence);
-    printf("it took you, %.1f seconds\nWPM: %.1f",time,(*Words_Count*60)/time);
+    printf("it took you, %d seconds\nWPM: %.1f",time,(*Words_Count*60)/time);
     return time;
 }
