@@ -19,6 +19,6 @@ int Measure_Typing_Speed(char * Sentence,int SentenceLength,int* Words_Count)
     long microseconds = end.tv_usec - begin.tv_usec;
     double time = seconds + microseconds*1e-6;
     Find_Faults(SentenceLength,Sentence,UserSentence);
-    printf("it took you, %.1f seconds\nWPM: %.1f\n",time,(*Words_Count*60)/time);
+    printf("it took you, %.1f seconds\nWPM: %.1f\n",time,(float)(*Words_Count*60)/time);
     return time;
 }
