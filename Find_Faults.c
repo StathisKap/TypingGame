@@ -10,7 +10,7 @@ void Find_Faults(int SentenceLength,char String[] ,char User_Sentence[])
     printf("\n");
     puts(String);
     
-    for(int i = 2; i<SentenceLength;i++)
+    for(int i = 0; i<SentenceLength;i++)
     {
         if(String[i]==User_Sentence[i])
         {

@@ -12,7 +12,8 @@ char* Generate_Sentence(int SentenceLength, float * Word_Count)
     char *Sentence = malloc(SentenceLength);
     char Alphabet[] = {"abcdefghijklmnopqrstuvwxyz"};
     int total = 0,space = 0;
-    while(total<SentenceLength-2)
+    
+    do
     {
         int WordLength = 2 + rand() %8;
         char Word[11];
@@ -23,11 +24,16 @@ char* Generate_Sentence(int SentenceLength, float * Word_Count)
             Word[i]=Alphabet[Letter];
             Word[WordLength]='\0';
         }
-        total += ++space + WordLength;
-        strcat(Sentence-1, Word);
+        if(strlen(Sentence))
+        strcat(Sentence, Word);
+        else
+        strcpy(Sentence, Word);
         ++*Word_Count;
+        total += ++space + WordLength;
         strcat(Sentence, " ");
         Sentence[SentenceLength]='\0';
-    }
+    } while(total<SentenceLength-10);
+    
+    
     return Sentence;
 }
