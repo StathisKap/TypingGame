@@ -12,6 +12,7 @@ char* Generate_Sentence(int SentenceLength, int* Word_Count)
     char *Sentence = malloc(SentenceLength);
     char Alphabet[] = {"abcdefghijklmnopqrstuvwxyz"};
     int total = 0,space = 0;
+    Sentence[0]=0;
     
     do
     {
@@ -24,10 +25,7 @@ char* Generate_Sentence(int SentenceLength, int* Word_Count)
             Word[i]=Alphabet[Letter];
             Word[WordLength]='\0';
         }
-        if(strlen(Sentence))
             strcat(Sentence, Word);
-        else
-            strcpy(Sentence, Word); 
         ++*Word_Count;
         total += ++space + WordLength;
         strcat(Sentence, " ");
