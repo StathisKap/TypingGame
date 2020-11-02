@@ -8,9 +8,9 @@
 
 int Measure_Typing_Speed(char * Sentence,int SentenceLength,float * Words_Count)
 {
-    char *UserSentence = malloc(SentenceLength);
+    fflush(stdout);
+    char *UserSentence = (char *)malloc(SentenceLength*sizeof(char *));
     printf("Start typing this Sentence as fast as you can:\n\n%s\n",Sentence);
-    fflush(stdin);
     struct timeval begin, end;
     gettimeofday(&begin, 0);
     fgets(UserSentence,SentenceLength,stdin);
@@ -19,6 +19,6 @@ int Measure_Typing_Speed(char * Sentence,int SentenceLength,float * Words_Count)
     long microseconds = end.tv_usec - begin.tv_usec;
     double time = seconds + microseconds*1e-6;
     Find_Faults(SentenceLength,Sentence,UserSentence);
-    printf("it took you, %.1f seconds\nWPM: %.1f",time,(*Words_Count*60)/time);
+    printf("it took you, %.1f seconds\nWPM: %.1f\n",time,(*Words_Count*60)/time);
     return time;
 }
