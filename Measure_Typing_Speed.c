@@ -6,11 +6,7 @@
 #include "Find_Faults.h"
 
 
-<<<<<<< HEAD
-int Measure_Typing_Speed(char Sentence[],int SentenceLength,float * Words_Count)
-=======
 int Measure_Typing_Speed(char * Sentence,int SentenceLength,int* Words_Count)
->>>>>>> BugFixing
 {
     fflush(stdout);
     char *UserSentence = (char *)malloc(SentenceLength*sizeof(char *));
