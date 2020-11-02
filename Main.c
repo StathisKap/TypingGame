@@ -16,7 +16,7 @@ int main()
 {
     int SentenceLength;
     char Length[5];
-    int Word_Count;
+    int Word_Count=0;
     printf("How long do you want your sentences to be?\n");
     fgets(Length,5,stdin);
     SentenceLength = atoi(Length);
