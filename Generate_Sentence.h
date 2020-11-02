@@ -1,1 +1,1 @@
-char* Generate_Sentence(int SentenceLength, float * Word_Count);
+char* Generate_Sentence(int SentenceLength, int * Word_Count);

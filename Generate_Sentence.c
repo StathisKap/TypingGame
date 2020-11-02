@@ -6,7 +6,7 @@
 
 
 
-char* Generate_Sentence(int SentenceLength, float * Word_Count)
+char* Generate_Sentence(int SentenceLength, int* Word_Count)
 {
     srand(time(0));
     char *Sentence = malloc(SentenceLength);
@@ -25,15 +25,14 @@ char* Generate_Sentence(int SentenceLength, float * Word_Count)
             Word[WordLength]='\0';
         }
         if(strlen(Sentence))
-        strcat(Sentence, Word);
+            strcat(Sentence, Word);
         else
-        strcpy(Sentence, Word);
+            strcpy(Sentence, Word); 
         ++*Word_Count;
         total += ++space + WordLength;
         strcat(Sentence, " ");
         Sentence[SentenceLength]='\0';
     } while(total<SentenceLength-10);
-    
-    
+
     return Sentence;
 }
