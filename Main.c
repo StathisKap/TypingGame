@@ -15,12 +15,12 @@
 int main()
 {
     int SentenceLength;
-    char *Length = malloc(4);
-    float Word_Count;
+    char Length[5];
+    int Word_Count;
     printf("How long do you want your sentences to be?\n");
-    fgets(Length,4,stdin);
+    fgets(Length,5,stdin);
     SentenceLength = atoi(Length);
-    char *str = malloc(SentenceLength);
+    char str[SentenceLength];
     strcpy(str,Generate_Sentence(SentenceLength,&Word_Count));
     Measure_Typing_Speed(str,SentenceLength,&Word_Count);
     return 0;
